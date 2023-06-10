@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap" rel="stylesheet">
+  <title>Age calculator</title>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: 'hsl(259, 100%, 65%);',
+            white: "hsl(0, 0%, 100%)",
+            red: "hsl(0, 100%, 67%)",
+            "off-white": "hsl(0, 0%, 94%)",
+            "light-grey": "hsl(0, 0%, 86%)",
+            "smokey-grey": "hsl(0, 1%, 44%)",
+            "off-black": "hsl(0, 0%, 8%)"
+          },
+          fontFamily: {
+            sans: 'Poppins'
+          },
+          fontWeight: {
+            title: '800'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="flex w-screen h-screen items-center justify-center bg-off-white max-[375px]:p-4">
+ <div class="flex flex-col items-start justify-center bg-white p-12 pr-[100px] rounded-xl rounded-br-[20%] max-[375px]:w-full max-[375px]:px-4 max-[375px]:py-8">
+  <div class="flex max-[375px]:p-2 max-[375px]:w-full max-[375px]:items-center max-[375px]:justify-center max-[375px]:gap-3 max-[375px]:pt-4">
+    <div id="container-dd" class="flex flex-col gap-2 group w-[180px] h-[118px] max-[375px]:w-[80px]">
+      <label for="dd" class="text-smokey-grey uppercase tracking-widest group-[.error]:text-red max-[375px]:text-sm">Day</label>
+      <input type="text" id="dd" placeholder="DD" maxlength="2" class="text-[32px] py-1 px-4 w-32 border border-light-grey rounded-md group-[.error]:border-red focus:border-primary outline-none placeholder:text-smokey-grey text-off-black max-[375px]:text-[26px] max-[375px]:w-[80px]">
+      <span class="font-[400] italic group-[.error]:text-red text-sm hidden group-[.error]:block max-[375px]:text-xs">Must be a valid day</span>
+    </div>
+  
+    <div id="container-mm" class="flex flex-col gap-2 group w-[180px] h-[118px] max-[375px]:w-[80px]">
+      <label for="mm" class="text-smokey-grey uppercase tracking-widest group-[.error]:text-red max-[375px]:text-sm">Month</label>
+      <input type="text" id="mm" placeholder="MM" maxlength="2" class="text-[32px] py-1 px-4 w-32 border border-light-grey rounded-md group-[.error]:border-red focus:border-primary outline-none placeholder:text-smokey-grey text-off-black max-[375px]:text-[26px] max-[375px]:w-[80px]">
+      <span class="font-[400] italic group-[.error]:text-red text-sm hidden group-[.error]:block max-[375px]:text-xs">Must be a valid month</span>
+    </div>
+    
+    <div id="container-yyyy" class="flex flex-col gap-2 group w-[200px] h-[118px] max-[375px]:w-[80px]">
+      <label for="yyyy" class="text-smokey-grey uppercase tracking-widest group-[.error]:text-red max-[375px]:text-sm">Year</label>
+      <input type="text" id="yyyy" placeholder="YYYY" maxlength="4" class="text-[32px] py-1 px-4 w-32 border border-light-grey rounded-md group-[.error]:border-red focus:border-primary outline-none placeholder:text-smokey-grey text-off-black max-[375px]:text-[26px] max-[375px]:w-[90px] max-[375px]:px-2">
+      <span class="font-[400] italic group-[.error]:text-red text-sm hidden group-[.error]:block max-[375px]:text-xs">Must be a valid year</span>
+    </div>
+   </div>
+
+   <div class="my-12 h-[1px] w-full bg-light-grey relative">
+    <div id="calculate-button" class="bg-primary w-10 box-content p-3 rounded-full absolute top-0 right-[0] -translate-y-1/2 translate-x-10 cursor-pointer hover:bg-off-black transition-colors max-[375px]:-translate-x-1/2 max-[375px]:left-1/2">
+      <img src="./assets/icon-arrow.svg" alt="">
+    </div>
+   </div>
+  
+    <div class="flex flex-col justify-start gap-2">
+      <h1 class="text-7xl italic font-title text-off-black max-[375px]:text-[54px]">
+        <span id="display-yyyy" class="text-primary">--</span>
+         years
+      </h1>
+      <h1 class="text-7xl italic font-title text-off-black max-[375px]:text-[54px]">
+        <span id="display-mm" class="text-primary">--</span>
+         months
+      </h1>
+      <h1 class="text-7xl italic font-title text-off-black max-[375px]:text-[54px]">
+        <span id="display-dd" class="text-primary">--</span>
+         days
+      </h1>
+    </div>
+ </div>
+
+ <script type="module" src="./index.js" defer></script>
+</body>
+</html>
